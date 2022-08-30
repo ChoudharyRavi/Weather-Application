@@ -27,7 +27,6 @@ class UserListFragment : Fragment(),ListAdapter.ItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -72,7 +71,8 @@ class UserListFragment : Fragment(),ListAdapter.ItemClickListener {
                 }
 
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                        mUserViewModel.deleteUser(userList[direction])
+
+                        mUserViewModel.deleteUser(userList[viewHolder.adapterPosition])
 
                     Toast.makeText(activity, "User Details Deleted",
                         Toast.LENGTH_SHORT).show()
