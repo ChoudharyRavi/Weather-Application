@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.weatherapplication.viewmodel.LoginViewModel"/>
+    </data>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+            <EditText
+                android:id="@+id/edt_email"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addTextChangedListener="@{viewModel.emailTextWatcher}"/>
+            <EditText
+                android:id="@+id/edt_password"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addTextChangedListener="@{viewModel.passwordTextWatcher}"/>
+            <Button
+                android:id="@+id/btn_login"
+                android:text="Login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+</layout>
